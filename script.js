@@ -5,7 +5,6 @@ const image3 = document.getElementById('image2');
 const rightArrow = document.querySelector('.right');
 const leftArrow = document.querySelector('.left');
 
-
 const dot0 = document.getElementById('0');
 const dot1 = document.getElementById('1');
 const dot2 = document.getElementById('2');
@@ -23,6 +22,8 @@ let pastIndex = DEFAULT_LEFT_INDEX;
 
  const initPage = () => {
     currentImage.classList.add('active');
+    updateDots();
+    startInterval();
 }
 
 const goLeft = () => {
@@ -89,6 +90,11 @@ const updateDots = () => {
     }
 }
 
+const startInterval = () => {
+    setTimeout(5000);
+    setInterval(goRight, 5000);
+}
+
 rightArrow.addEventListener('click', goRight);
 leftArrow.addEventListener('click', goLeft);
 
@@ -96,5 +102,4 @@ dots.forEach(dot => dot.addEventListener('click', changeImage));
 
 window.onload = () => {
     initPage();
-    updateDots();
 }
