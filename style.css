@@ -106,9 +106,15 @@ body {
     justify-content: center;
 }
 
-.pictures {
+.picture {
+    position: absolute;
     align-self: center;
     font-size: 25rem;
+    opacity: 0%;
+}
+
+.picture.active {
+    opacity: 100%;
 }
 
 .dots {
